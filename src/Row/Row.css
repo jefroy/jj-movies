@@ -1,6 +1,7 @@
 /* your css code */
 .row{
     margin-left: 20px;
+    color: white;
 }
 
 .row__posters{
@@ -34,4 +35,14 @@
 }
 .row__posterLarge:hover{
     transform: scale(1.09);
+}
+
+.banner__fadeBottom{
+    height: 7.4rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37,37,37,0.61),
+        #111
+    );
 }
