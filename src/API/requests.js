@@ -36,11 +36,13 @@ const requests = {
     fetchTrending: `${URL.TRENDING + URL.ALL + URL.WEEK + QUERY.API_KEY + QUERY.LANGUAGE.ENGLISH}`,
     fetchNetflixOriginals: `${URL.DISCOVER + URL.TV + QUERY.API_KEY + QUERY.NETWORK + NETWORK.NETFLIX}`,
     fetchTopRated: `${URL.MOVIE + URL.TOP_RATED + QUERY.API_KEY + QUERY.LANGUAGE.ENGLISH}`,
-    fetchActionMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + GENRE.ACTION}`,
-    fetchComedyMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + GENRE.COMEDY}`,
-    fetchHorrorMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + GENRE.HORROR}`,
-    fetchRomanceMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + GENRE.ROMANCE}`,
-    fetchDocumentaries: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + GENRE.DOCUMENTARY}`,
+    fetchActionMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.ACTION}`,
+    fetchComedyMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.COMEDY}`,
+    fetchHorrorMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.HORROR}`,
+    fetchRomanceMovies: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.ROMANCE}`,
+    fetchDocumentaries: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.DOCUMENTARY}`,
+    BASE_URL: 'https://api.themoviedb.org/3',
+    BASE_POSTER_PATH: 'https://image.tmdb.org/t/p/original',
 }
 
 export default requests;
