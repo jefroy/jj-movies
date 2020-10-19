@@ -1,0 +1,33 @@
+/* your css code */
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px;
+    height: 30px;
+    /*always at top*/
+    z-index: 1;
+
+/*    animations*/
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav__black{
+    background-color: #111;
+}
+
+.nav__logo{
+    position: fixed;
+    left: 20px;
+    top: -5px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.nav__avatar{
+    width: 40px;
+    object-fit: contain;
+    right: 20px;
+    position: fixed;
+}
