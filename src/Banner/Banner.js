@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import requests from "../API/requests";
+import Requests from "../API/Requests";
+const requests = new Requests();
 import axios from "../API/axios";
 import "./Banner.css";
 
