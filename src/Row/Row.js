@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from '../API/axios'
-import requests from "../API/requests";
+import Requests from "../API/Requests";
 import "./Row.css";
 
 import YouTube from "react-youtube";
 import movieTrailer from 'movie-trailer';
+
+const requests = new Requests();
 
 function Row({title, fetchUrl, isLargeRow}) {
   // states (react variables)
@@ -17,9 +19,9 @@ function Row({title, fetchUrl, isLargeRow}) {
     // call an async function
     async function fetchData(){
       // wait for promise
-      const request = await axios.get(fetchUrl); // IMPORTANT: specify this as a dependency down there
-      setMovies(request.data.results);
-      return request;
+      const axiosReq = await axios.get(fetchUrl); // IMPORTANT: specify this as a dependency down there
+      setMovies(axiosReq.data.results);
+      return axiosReq;
     }
     fetchData();
   }, [fetchUrl]);
