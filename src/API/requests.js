@@ -4,6 +4,7 @@ const API_KEY = 'b334b5c19778e77289998941265b24ed';
 const URL = {
     TV: '/tv',
     MOVIE: '/movie',
+    VIDEOS: '/video',
     TOP_RATED: '/top_rated',
     DISCOVER: '/discover',
     TRENDING: '/trending',
@@ -43,6 +44,7 @@ const requests = {
     fetchDocumentaries: `${URL.DISCOVER + URL.MOVIE + QUERY.API_KEY + QUERY.GENRE + GENRE.DOCUMENTARY}`,
     BASE_URL: 'https://api.themoviedb.org/3',
     BASE_POSTER_PATH: 'https://image.tmdb.org/t/p/original',
+    YOUTUBE_BASE_URL: 'https://www.youtube.com/watch?v=',
 }
 
 export default requests;

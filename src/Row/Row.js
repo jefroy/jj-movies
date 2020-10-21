@@ -27,7 +27,7 @@ function Row({title, fetchUrl, isLargeRow}) {
   // youtube player stuff
   const [trailerUrl, setTrailerUrl] = useState('');
   const opts = { // options
-      height: '390',
+      height: '400',
       width: '100%',
       playerVars: {
           // dev google youtube player params
@@ -40,6 +40,7 @@ function Row({title, fetchUrl, isLargeRow}) {
           setTrailerUrl('');
       } else{
           console.log('movie name: ', movie.name);
+          console.log('movie id: ', movie.id);
           movieTrailer(movie?.name || "")
               .then((url) => {
                   // https://www.youtube.com/watch?v=XTZX9psWJ9o
