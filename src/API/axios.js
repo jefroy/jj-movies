@@ -1,5 +1,6 @@
 import axios from 'axios';
-import requests from "./requests";
+import Requests from "./Requests";
+const requests = new Requests();
 
 // base url to make requests to tmdb //
 const instance = axios.create({
