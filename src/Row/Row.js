@@ -4,7 +4,6 @@ import Requests from "../API/Requests";
 import "./Row.css";
 
 import YouTube from "react-youtube";
-import movieTrailer from 'movie-trailer';
 
 const requests = new Requests();
 
@@ -31,7 +30,6 @@ function Row({title, fetchUrl, isLargeRow}) {
   // get video id from extended api search based on show ID
   const [video, setVideo] = useState('');
   // youtube player stuff
-  // const [trailerUrl, setTrailerUrl] = useState('');
   const opts = { // options
       height: '400',
       width: '100%',
@@ -45,13 +43,6 @@ function Row({title, fetchUrl, isLargeRow}) {
       if(video){ // if the video is open, close it
           setVideo('');
       } else{
-          // console.log('movie: ', movie);
-          // console.log('movie name: ', movie.name);
-          // console.log('movie id: ', movie.id);
-          // console.log('movie media_type: ', movie.media_type);
-          // if [], run once on row load
-          // if [movies], reload the row if movies changes
-          // call an async function
           async function fetchVideoId(){
               // wait for promise //
               const axiosReq = await axios.get(requests.fetchVideosByType(movie.media_type, movie.id, fetchUrl)); // IMPORTANT: specify this as a dependency down there
@@ -61,18 +52,6 @@ function Row({title, fetchUrl, isLargeRow}) {
               return axiosReq;
           }
           fetchVideoId();
-          // movieTrailer(movie?.name || "")
-          //     .then((url) => {
-          //         // https://www.youtube.com/watch?v=XTZX9psWJ9o
-          //         const urlParams = new URL(url).search; // search will give us everything after the '?'
-          //         console.log('urlParams: ', urlParams);
-          //         const urlSearchParams = new URLSearchParams(urlParams); // allow us to use .get
-          //         console.log('urlSearchParams.get(\'v\'): ', urlSearchParams.get('v'));
-          //         setTrailerUrl(urlSearchParams.get('v')); // gets the VALUE of the query, so ?v= VALUE
-          //     })
-          //     .catch((error) =>
-          //         console.log(error, trailerUrl)
-          //     );
       }
   };
 
