@@ -19,6 +19,5 @@ script:
   - npm run build
 install:
   - npm install -g firebase-tools
-  - npm install react-youtube
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
