@@ -16,6 +16,8 @@ class Requests{
             API_KEY: '?api_key=' + this._API_KEY,
             NETWORK: '&with_networks=0',
             GENRE: '&with_genres=0',
+            VIDEOS: '&append_to_response=videos',
+            MEDIA_TYPE: '&append_to_response=media_type',
             LANGUAGE: {
                 ENGLISH: '&language=en-US',
             },
@@ -158,6 +160,29 @@ class Requests{
             this._GENRE.DOCUMENTARY
         }`;
         return q;
+    }
+
+    fetchVideosByType(mediaType, movieId, url){
+        // check for a movie type, tv or movie and return an api call with VIDEOS
+        if(mediaType === undefined){
+            mediaType = this.getMediaTypeByURL(url);
+        }
+        const q = `${
+            mediaType + // /tv or /movie
+            '/' + movieId +
+            this._QUERY.API_KEY +
+            this._QUERY.VIDEOS
+        }`;
+        return q;
+    }
+
+    getMediaTypeByURL(url){
+        if(url.includes(this._URL.TV)){
+            return this._URL.TV
+        }
+        // at this point, check for media_type in results since for trending,
+        // it can be all/person/tv/movie etc
+        return this._URL.MOVIE;
     }
 
 }
