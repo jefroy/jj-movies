@@ -8,7 +8,6 @@ import YouTube from "react-youtube";
 const requests = new Requests();
 
 function Row({title, fetchUrl, isLargeRow}) {
-    let mediaType = ''; // /movie or /tv
   // states (react variables)
   const [movies, setMovies] = useState([]);
   // a snippet of code which runs based on a specific condition/variable
